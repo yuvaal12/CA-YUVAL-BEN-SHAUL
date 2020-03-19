@@ -20,7 +20,7 @@ gMines.innerText = gLevel.MINES;
 var gElMsg = document.querySelector('.msg');
 var gLives = 3;
 var gElLives = document.querySelectorAll('.lives')
-var gAudioBomb = new Audio('../audio/bomb.mp3');
+var gAudioBomb = new Audio('audio/bomb.mp3');
 var gAudioglass = new Audio('audio/glass.mp3');
 
 // on load  ----------------------
@@ -204,7 +204,7 @@ function openNeigCelles(cellI, cellJ, board) {
                 board[i][j].isShown = true;
                 document.querySelector(`[data-i="${i}"][data-j="${j}"]`).classList.remove('hideItems');
                 document.getElementById(`${i}-${j}`).classList.add('hideItems');
-                if (board[i][j].minesAroundCount === 0) {
+                if (board[i][j].minesAroundCount === 0 && !gIsHint) {
                     openNeigCelles(i, j, board)
                 }
 
