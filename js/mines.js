@@ -20,7 +20,7 @@ gMines.innerText = gLevel.MINES;
 var gElMsg = document.querySelector('.msg');
 var gLives = 3;
 var gElLives = document.querySelectorAll('.lives')
-var gAudioBomb = new Audio('/audio/bomb.mp3');
+var gAudioBomb = new Audio('audio/bomb.mp3');
 var gAudioglass = new Audio('audio/glass.mp3');
 
 // on load  ----------------------
