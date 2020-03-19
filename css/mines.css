@@ -1,0 +1,132 @@
+body {
+    /* background-color: black; */
+    background-image: url("/img/1.jpg");
+    text-align: center;
+    background-repeat: no-repeat;
+}
+
+h1,
+h2 {
+    color: rgb(252, 0, 176);
+}
+
+table {
+    margin: 10px auto;
+    background-color: rgb(78, 20, 117);
+    opacity: 0.85;
+    position: relative;
+    border: 1px solid white;
+    color: white;
+}
+
+.showMine {
+    display: block;
+    background-color: red;
+}
+
+.hideMine {
+    display: none;
+}
+
+.close-cell {
+    height: 50px;
+    width: 50px;
+    border: 1px solid white;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    font-size: 24px;
+}
+
+.open-cell {
+    height: 50px;
+    width: 50px;
+    border: 1px solid white;
+    font-size: 35px;
+}
+
+.close-cell:hover {
+    background-color: rgb(252, 0, 176);
+    cursor: pointer;
+}
+
+.hideItems {
+    display: none;
+}
+
+button {
+    padding: 10px 50px;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: white;
+    background-color: rgb(252, 0, 176);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(78, 20, 117);
+    width: 250px;
+    font-size: 35px;
+    transition: 0.9s;
+}
+
+.hints {
+    background-color: rgb(78, 20, 117);
+    border-radius: 50px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.hints:hover {
+    background-color: white;
+    width: 100px;
+    font-size: 35px;
+    transition: 0.9s;
+    cursor: pointer;
+}
+
+.time {
+    color: white;
+    top: 10px;
+    display: inline-block;
+}
+
+.marked-flags {
+    color: rgb(252, 0, 176);
+    margin-right: 100px;
+}
+
+.time-minecnt-flags {
+    margin: 10px auto;
+    background-color: rgb(78, 20, 117);
+    opacity: 0.85;
+    border: 2px solid white;
+    text-align: center;
+    color: red;
+    width: 800px;
+}
+
+#miliSeconds {
+    color: rgb(252, 0, 176);
+    margin-right: 100px;
+}
+
+.msg {
+    color: rgb(252, 0, 176);
+    background-color: white;
+    font-size: 24px;
+    width: 800px;
+    margin: 20px auto;
+}
+
+.smile-btn {
+    margin: 0px 50px;
+}
+
+.lives:hover {
+    border-radius: 50px;
+    font-size: 35px;
+    opacity: 0.6;
+    cursor: none;
+    transition: 0.9s;
+}

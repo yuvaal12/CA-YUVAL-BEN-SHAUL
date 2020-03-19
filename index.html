@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineSweeper Yuval BS</title>
+    <link rel="stylesheet" href="css/mines.css">
+</head>
+
+<body onload="init()">
+    <h1>Welcom To Mines Sweeper :)</h1>
+    <button class="button mode" onclick="easyMode()">EASY</button>
+    <button class="button mode" onclick="midMode()">MEDIUM</button>
+    <button class="button mode" onclick="hardMode()">HARD</button>
+    <div class="time-minecnt-flags">
+        <h2>Time (seconds) : <label id="miliSeconds" class="time"></label> Marked Flags: <label class="marked-flags"></label> Mines: <label class="mines-mode"></label></h2>
+        <h2>
+            <h2>Hints:<a class="hints" onclick="hintsDisplay(this)">💡</a ><a class="hints" onclick="hintsDisplay(this)">💡</a><a class="hints" onclick="hintsDisplay(this)">💡</a>
+                <button class="smile-btn" onclick="startNewGame()">😁</button> Lives:
+                <a class="lives">❤️</a ><a class="lives">❤️</a><a class="lives">❤️</a></h2>
+
+        </h2>
+    </div>
+    <div class="msg hideItems">Game Over!</div>
+    <table>
+        <tbody class="board"></tbody>
+    </table>
+    <script src="/js/mines.js"></script>
+</body>
+
+</html>
