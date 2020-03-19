@@ -1,6 +1,6 @@
 body {
     /* background-color: black; */
-    background-image: url("/img/1.jpg");
+    background-image: url("img/1.jpg");
     text-align: center;
     background-repeat: no-repeat;
 }
