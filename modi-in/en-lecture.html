@@ -772,6 +772,17 @@ html.a11y-headings h1, html.a11y-headings h2, html.a11y-headings h3 { outline: 2
 html.a11y-invert main, html.a11y-invert footer.site, html.a11y-invert .masthead { filter: invert(1) hue-rotate(180deg); }
 html.a11y-invert main img, html.a11y-invert main video, html.a11y-invert .masthead img, html.a11y-invert footer.site img, html.a11y-invert canvas { filter: invert(1) hue-rotate(180deg); }
 
+/* Hebrew header: links on the right, buttons + logo on the left (the logo is in English) */
+[dir=rtl] .mast-row .nav { order: 1; }
+[dir=rtl] .mast-row .mast-actions { order: 2; }
+[dir=rtl] .mast-row .home { order: 3; }
+@media (min-width: 1101px) {
+  [dir=rtl] .mast-row .nav { margin-inline-start: 0 !important; margin-inline-end: auto !important; }
+  [dir=rtl] .mast-row .mast-actions { padding-inline-end: 22px; margin-inline-end: 4px; border-inline-end: 1px solid #dcdcd8; }
+  [dir=ltr] .mast-row .mast-actions { padding-inline-start: 22px; margin-inline-start: 4px; border-inline-start: 1px solid #dcdcd8; }
+}
+@media (max-width: 1100px) { [dir=rtl] .mast-row .mast-actions { flex-direction: row-reverse; } }
+
 /* Layout: one newspaper issue on light newsprint. White masthead pinned on top with the two actions.
    Every section shares one header (navy icon tile + condensed headline + rule), one measure, and closes on the same booking strip.
    Navy carries weight in three places only: the hero portrait panel, the 3D battle map, and the buttons.
@@ -1434,6 +1445,17 @@ html.a11y-headings h1, html.a11y-headings h2, html.a11y-headings h3 { outline: 2
 
 html.a11y-invert main, html.a11y-invert footer.site, html.a11y-invert .masthead { filter: invert(1) hue-rotate(180deg); }
 html.a11y-invert main img, html.a11y-invert main video, html.a11y-invert .masthead img, html.a11y-invert footer.site img, html.a11y-invert canvas { filter: invert(1) hue-rotate(180deg); }
+
+/* Hebrew header: links on the right, buttons + logo on the left (the logo is in English) */
+[dir=rtl] .mast-row .nav { order: 1; }
+[dir=rtl] .mast-row .mast-actions { order: 2; }
+[dir=rtl] .mast-row .home { order: 3; }
+@media (min-width: 1101px) {
+  [dir=rtl] .mast-row .nav { margin-inline-start: 0 !important; margin-inline-end: auto !important; }
+  [dir=rtl] .mast-row .mast-actions { padding-inline-end: 22px; margin-inline-end: 4px; border-inline-end: 1px solid #dcdcd8; }
+  [dir=ltr] .mast-row .mast-actions { padding-inline-start: 22px; margin-inline-start: 4px; border-inline-start: 1px solid #dcdcd8; }
+}
+@media (max-width: 1100px) { [dir=rtl] .mast-row .mast-actions { flex-direction: row-reverse; } }
 
 .portrait { background: linear-gradient(160deg,#ececeb,#dcdcda) !important; border-radius: 28px; } .portrait .gpin { color: #0b0b0c !important; } .lesson .tile, .record .tile, .sec-head > .tile { background: #0b0b0c !important; }
 /* ---- English / LTR fixes ---- */
