@@ -973,6 +973,7 @@ symbol .fa { fill: var(--a, #2e3a5a); } symbol .fb { fill: var(--b, #cdd7ee); } 
 .lessons-intro .fit { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { padding: 7px 13px; border-radius: 999px; background: var(--white); box-shadow: inset 0 0 0 1px var(--rule); font-size: var(--step-small); color: var(--ink-2); }
 .lessons { display: grid; gap: 14px; counter-reset: l; }
+.lessons-title { font-family: "Rubik", var(--f-text); font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.2rem); line-height: 1.2; font-weight: 700; color: #0b0b0c; margin: 0 0 6px; }
 .lesson {
   display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 20px; align-items: start;
   background: var(--white); border-radius: 8px; padding: 24px 26px;
@@ -1646,6 +1647,7 @@ svg.waves { opacity: .22 !important; }
           </div>
         </aside>
         <div class="lessons">
+          <h3 class="lessons-title">תובנות שתקחו אתכם לעבודה יומיומית</h3>
           <article class="lesson reveal"><span class="tile"><svg viewBox="0 0 48 48"><use width="48" height="48" href="#i-search"/></svg></span><h3>ממודיעין לעולם הניהול</h3><p>שיטות העבודה של אנשי מודיעין, מתורגמות להחלטות היומיומיות של מנהלים: איסוף, הצלבה, הערכה והחלטה.</p></article>
           <article class="lesson reveal"><span class="tile"><svg viewBox="0 0 48 48"><use width="48" height="48" href="#i-radar"/></svg></span><h3>פתרון בעיות בתנאי אי ודאות</h3><p>איך מתקדמים כשהמידע חלקי, סותר או חסר, במקום לחכות לתמונה מלאה שאולי לעולם לא תגיע.</p></article>
           <article class="lesson reveal"><span class="tile"><svg viewBox="0 0 48 48"><use width="48" height="48" href="#i-bulb"/></svg></span><h3>חשיבה יצירתית ומחוץ לקופסה</h3><p>איך מוצאים כיוון חדש כשכל הדרכים המוכרות כבר נוסו, ומה עושים כשהפתרון לא נמצא במקום שבו כולם מחפשים.</p></article>

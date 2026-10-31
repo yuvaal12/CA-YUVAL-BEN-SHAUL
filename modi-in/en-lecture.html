@@ -973,6 +973,7 @@ symbol .fa { fill: var(--a, #2e3a5a); } symbol .fb { fill: var(--b, #cdd7ee); } 
 .lessons-intro .fit { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { padding: 7px 13px; border-radius: 999px; background: var(--white); box-shadow: inset 0 0 0 1px var(--rule); font-size: var(--step-small); color: var(--ink-2); }
 .lessons { display: grid; gap: 14px; counter-reset: l; }
+.lessons-title { font-family: "Rubik", var(--f-text); font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.2rem); line-height: 1.2; font-weight: 700; color: #0b0b0c; margin: 0 0 6px; }
 .lesson {
   display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 20px; align-items: start;
   background: var(--white); border-radius: 8px; padding: 24px 26px;
@@ -2226,6 +2227,7 @@ a.svc:hover .svc-more .ic { transform: translateX(-4px); }
           </div>
         </aside>
         <div class="lessons">
+          <h3 class="lessons-title">Insights to take back to your everyday work</h3>
           <article class="lesson reveal"><span class="tile"><svg viewBox="0 0 48 48"><use width="48" height="48" href="#i-search"/></svg></span><h3>From intelligence to management</h3><p>The working methods of intelligence professionals, translated into the everyday decisions of managers: collection, cross-checking, assessment and decision.</p></article>
           <article class="lesson reveal"><span class="tile"><svg viewBox="0 0 48 48"><use width="48" height="48" href="#i-radar"/></svg></span><h3>Problem-solving under uncertainty</h3><p>How to move forward when information is partial, contradictory or missing, instead of waiting for a complete picture that may never arrive.</p></article>
           <article class="lesson reveal"><span class="tile"><svg viewBox="0 0 48 48"><use width="48" height="48" href="#i-bulb"/></svg></span><h3>Creative, out-of-the-box thinking</h3><p>How to find a new direction when every familiar path has already been tried, and what to do when the solution isn't where everyone is looking.</p></article>
