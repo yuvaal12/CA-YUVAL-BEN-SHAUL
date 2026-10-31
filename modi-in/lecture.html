@@ -2150,7 +2150,7 @@ html.a11y-invert main img, html.a11y-invert main video, html.a11y-invert .masthe
   });
 
   /* count-up numbers */
-  var nums = document.querySelectorAll(".kpis strong, .stat-row strong, .black-card b, .badge.tl b, .dc-stats b, .stat strong, .timeline strong, .numbers strong");
+  var nums = document.querySelectorAll(".kpis strong, .stat-row strong, .black-card b, .badge.tl b, .pstats b, .stat strong, .timeline strong, .numbers strong");
   var cio = new IntersectionObserver(function(en){ en.forEach(function(e){
     if (!e.isIntersecting) return; cio.unobserve(e.target);
     var el = e.target, txt = el.textContent.trim(), m = txt.match(/^(\D*)(\d+)(\D*)$/); if (!m) return;
