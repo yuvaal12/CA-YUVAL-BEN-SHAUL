@@ -783,6 +783,10 @@ html.a11y-invert main img, html.a11y-invert main video, html.a11y-invert .masthe
 }
 @media (max-width: 1100px) { [dir=rtl] .mast-row .mast-actions { flex-direction: row-reverse; } }
 
+/* section heads: subtitle always under the title */
+.head-row { grid-template-columns: minmax(0, 1fr) !important; align-items: start !important; gap: 12px !important; }
+.head-row .muted, .v4 .head-row .muted { justify-self: start !important; max-width: 62ch; margin-top: 0; }
+
 /* Layout: one newspaper issue on light newsprint. White masthead pinned on top with the two actions.
    Every section shares one header (navy icon tile + condensed headline + rule), one measure, and closes on the same booking strip.
    Navy carries weight in three places only: the hero portrait panel, the 3D battle map, and the buttons.
@@ -1457,6 +1461,10 @@ html.a11y-invert main img, html.a11y-invert main video, html.a11y-invert .masthe
 }
 @media (max-width: 1100px) { [dir=rtl] .mast-row .mast-actions { flex-direction: row-reverse; } }
 
+/* section heads: subtitle always under the title */
+.head-row { grid-template-columns: minmax(0, 1fr) !important; align-items: start !important; gap: 12px !important; }
+.head-row .muted, .v4 .head-row .muted { justify-self: start !important; max-width: 62ch; margin-top: 0; }
+
 .portrait { background: linear-gradient(160deg,#ececeb,#dcdcda) !important; border-radius: 28px; } .portrait .gpin { color: #0b0b0c !important; } .lesson .tile, .record .tile, .sec-head > .tile { background: #0b0b0c !important; }
 /* ---- English / LTR fixes ---- */
 html[dir=ltr] body, html[dir=ltr] main { direction: ltr; font-family: "IBM Plex Sans", "IBM Plex Sans Hebrew", Arial, sans-serif; }
@@ -1517,6 +1525,18 @@ html[dir=ltr] .timeline li + li::before { left: 22px; }
 [dir=ltr] .lc-cta .arr .ic { transform: rotate(135deg); }
 .lec-card:hover .lc-cta .arr { transform: rotate(-45deg); }
 @media (max-width: 600px) { .lec-card { grid-template-columns: 92px minmax(0, 1fr); gap: 12px; } .lc-img { min-height: 130px; } .lc-tx small { font-size: .8rem; } .lc-cta { font-size: .8rem; padding-inline: 12px 4px; height: 36px; } .lc-cta .arr { width: 26px; height: 26px; } }
+/* process end: the answer card */
+a.proc .note { display: inline-flex; align-items: center; gap: 14px; padding: 12px 12px 12px 22px; padding-inline-start: 12px; border-radius: 999px; background: #0b0b0c; color: #fff !important; text-decoration: none; transform: rotate(-3deg); box-shadow: 0 24px 44px -20px rgba(0,0,0,.55); transition: transform .3s var(--ease-out); z-index: 2; }
+a.note:hover { transform: rotate(0deg) translateY(-3px); }
+a.note .nt-ic { width: 46px; height: 46px; border-radius: 50%; background: #d9f99d; color: #0b0b0c; display: grid; place-items: center; --duo-o: .25; }
+a.note .nt-ic .ic { width: 24px; height: 24px; }
+a.note b { display: block; font-family: "Rubik", var(--f-text); font-size: 1.35rem; font-weight: 600; line-height: 1.2; }
+a.note small { display: block; font-size: .85rem; color: #cfcfd2; }
+a.note .arr { width: 40px; height: 40px; border-radius: 50%; background: #fff; color: #0b0b0c; display: grid; place-items: center; }
+a.note .arr .ic { width: 18px; height: 18px; }
+[dir=ltr] a.note .arr .ic { transform: scaleX(-1); }
+/* numbers written LTR but aligned to the reading side */
+.pstats b, .kp4 b, .black-card b, .badge b, .stat-row strong, .kpis strong { justify-self: start; width: fit-content; }
 /* marquee with a fixed title */
 .mq { border-block: 1px solid var(--bw-line); background: #fff; }
 .mq-in { display: flex; align-items: center; gap: 0; }
@@ -1746,7 +1766,7 @@ footer.site .foot-bottom { border-top-color: var(--bw-line); }
   .svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .badge.tl { right: 12px; }
   .proc { height: auto; display: grid; gap: 20px; }
-  .proc svg.path, .proc .note { display: none; }
+  .proc svg.path { display: none; } a.proc .note { position: relative; inset: auto; justify-self: center; transform: none; margin-top: 8px; }
   .pin-card { position: relative; inset: auto; width: auto; max-width: 520px; }
   .pc1, .pc3 { transform: rotate(-2deg); justify-self: start; } .pc2, .pc4 { transform: rotate(2deg); justify-self: end; }
   .hrow { grid-auto-columns: minmax(280px, 70%); }

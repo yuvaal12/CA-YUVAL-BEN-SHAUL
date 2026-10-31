@@ -783,6 +783,10 @@ html.a11y-invert main img, html.a11y-invert main video, html.a11y-invert .masthe
 }
 @media (max-width: 1100px) { [dir=rtl] .mast-row .mast-actions { flex-direction: row-reverse; } }
 
+/* section heads: subtitle always under the title */
+.head-row { grid-template-columns: minmax(0, 1fr) !important; align-items: start !important; gap: 12px !important; }
+.head-row .muted, .v4 .head-row .muted { justify-self: start !important; max-width: 62ch; margin-top: 0; }
+
 /* lecturer feature card in the hero */
 .lec-card { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 18px; align-items: stretch; margin-top: 18px; max-width: 600px; padding: 12px; border-radius: 24px; background: #0b0b0c; color: #fff; text-decoration: none; box-shadow: 0 26px 50px -26px rgba(0,0,0,.65); transition: transform .25s var(--ease-out), box-shadow .25s; animation: heroIn .9s cubic-bezier(.2,.8,.2,1) .45s both; position: relative; }
 .lec-card:hover { transform: translateY(-3px); box-shadow: 0 32px 60px -26px rgba(0,0,0,.75); }
@@ -801,6 +805,18 @@ html.a11y-invert main img, html.a11y-invert main video, html.a11y-invert .masthe
 [dir=ltr] .lc-cta .arr .ic { transform: rotate(135deg); }
 .lec-card:hover .lc-cta .arr { transform: rotate(-45deg); }
 @media (max-width: 600px) { .lec-card { grid-template-columns: 92px minmax(0, 1fr); gap: 12px; } .lc-img { min-height: 130px; } .lc-tx small { font-size: .8rem; } .lc-cta { font-size: .8rem; padding-inline: 12px 4px; height: 36px; } .lc-cta .arr { width: 26px; height: 26px; } }
+/* process end: the answer card */
+a.proc .note { display: inline-flex; align-items: center; gap: 14px; padding: 12px 12px 12px 22px; padding-inline-start: 12px; border-radius: 999px; background: #0b0b0c; color: #fff !important; text-decoration: none; transform: rotate(-3deg); box-shadow: 0 24px 44px -20px rgba(0,0,0,.55); transition: transform .3s var(--ease-out); z-index: 2; }
+a.note:hover { transform: rotate(0deg) translateY(-3px); }
+a.note .nt-ic { width: 46px; height: 46px; border-radius: 50%; background: #d9f99d; color: #0b0b0c; display: grid; place-items: center; --duo-o: .25; }
+a.note .nt-ic .ic { width: 24px; height: 24px; }
+a.note b { display: block; font-family: "Rubik", var(--f-text); font-size: 1.35rem; font-weight: 600; line-height: 1.2; }
+a.note small { display: block; font-size: .85rem; color: #cfcfd2; }
+a.note .arr { width: 40px; height: 40px; border-radius: 50%; background: #fff; color: #0b0b0c; display: grid; place-items: center; }
+a.note .arr .ic { width: 18px; height: 18px; }
+[dir=ltr] a.note .arr .ic { transform: scaleX(-1); }
+/* numbers written LTR but aligned to the reading side */
+.pstats b, .kp4 b, .black-card b, .badge b, .stat-row strong, .kpis strong { justify-self: start; width: fit-content; }
 /* marquee with a fixed title */
 .mq { border-block: 1px solid var(--bw-line); background: #fff; }
 .mq-in { display: flex; align-items: center; gap: 0; }
@@ -1030,7 +1046,7 @@ footer.site .foot-bottom { border-top-color: var(--bw-line); }
   .svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .badge.tl { right: 12px; }
   .proc { height: auto; display: grid; gap: 20px; }
-  .proc svg.path, .proc .note { display: none; }
+  .proc svg.path { display: none; } a.proc .note { position: relative; inset: auto; justify-self: center; transform: none; margin-top: 8px; }
   .pin-card { position: relative; inset: auto; width: auto; max-width: 520px; }
   .pc1, .pc3 { transform: rotate(-2deg); justify-self: start; } .pc2, .pc4 { transform: rotate(2deg); justify-self: end; }
   .hrow { grid-auto-columns: minmax(280px, 70%); }
