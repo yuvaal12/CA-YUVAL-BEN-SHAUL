@@ -795,6 +795,10 @@ html.a11y-invert main img, html.a11y-invert main video, html.a11y-invert .masthe
 .nav a.hl[aria-current="page"] { background: #0b0b0c !important; color: #d9f99d !important; }
 @media (max-width: 1100px) { .nav a.hl { justify-content: flex-start; } }
 
+/* line-art waves: quiet enough to read text on top */
+svg.waves { opacity: .22 !important; }
+.black-card svg.waves, .keynote-strip svg.waves, .cta-card svg.waves { -webkit-mask: linear-gradient(to bottom, #000 0%, rgba(0,0,0,.55) 100%); mask: linear-gradient(to bottom, #000 0%, rgba(0,0,0,.55) 100%); }
+
 /* lecturer feature card in the hero */
 .lec-card { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 18px; align-items: stretch; margin-top: 18px; max-width: 600px; padding: 12px; border-radius: 24px; background: #0b0b0c; color: #fff; text-decoration: none; box-shadow: 0 26px 50px -26px rgba(0,0,0,.65); transition: transform .25s var(--ease-out), box-shadow .25s; animation: heroIn .9s cubic-bezier(.2,.8,.2,1) .45s both; position: relative; }
 .lec-card:hover { transform: translateY(-3px); box-shadow: 0 32px 60px -26px rgba(0,0,0,.75); }

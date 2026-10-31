@@ -795,6 +795,10 @@ html.a11y-invert main img, html.a11y-invert main video, html.a11y-invert .masthe
 .nav a.hl[aria-current="page"] { background: #0b0b0c !important; color: #d9f99d !important; }
 @media (max-width: 1100px) { .nav a.hl { justify-content: flex-start; } }
 
+/* line-art waves: quiet enough to read text on top */
+svg.waves { opacity: .22 !important; }
+.black-card svg.waves, .keynote-strip svg.waves, .cta-card svg.waves { -webkit-mask: linear-gradient(to bottom, #000 0%, rgba(0,0,0,.55) 100%); mask: linear-gradient(to bottom, #000 0%, rgba(0,0,0,.55) 100%); }
+
 /* Layout: one newspaper issue on light newsprint. White masthead pinned on top with the two actions.
    Every section shares one header (navy icon tile + condensed headline + rule), one measure, and closes on the same booking strip.
    Navy carries weight in three places only: the hero portrait panel, the 3D battle map, and the buttons.
@@ -1480,6 +1484,10 @@ html.a11y-invert main img, html.a11y-invert main video, html.a11y-invert .masthe
 .nav a.hl:hover { background: #c8f07d; }
 .nav a.hl[aria-current="page"] { background: #0b0b0c !important; color: #d9f99d !important; }
 @media (max-width: 1100px) { .nav a.hl { justify-content: flex-start; } }
+
+/* line-art waves: quiet enough to read text on top */
+svg.waves { opacity: .22 !important; }
+.black-card svg.waves, .keynote-strip svg.waves, .cta-card svg.waves { -webkit-mask: linear-gradient(to bottom, #000 0%, rgba(0,0,0,.55) 100%); mask: linear-gradient(to bottom, #000 0%, rgba(0,0,0,.55) 100%); }
 
 .portrait { background: linear-gradient(160deg,#ececeb,#dcdcda) !important; border-radius: 28px; } .portrait .gpin { color: #0b0b0c !important; } .lesson .tile, .record .tile, .sec-head > .tile { background: #0b0b0c !important; }
 /* ---- English / LTR fixes ---- */
