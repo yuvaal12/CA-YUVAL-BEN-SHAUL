@@ -852,6 +852,26 @@ a.note .arr .ic { width: 18px; height: 18px; }
 .keynote-strip li { border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 6px 14px; font-size: .88rem; color: #e4e4e7; }
 .keynote-strip .acts { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
 @media (max-width: 900px) { .keynote-strip { grid-template-columns: minmax(0, 1fr); } .keynote-strip .ks-img { min-height: 240px; } }
+/* animated battle map card */
+.map-card { background: #ececea; }
+.map-card .bmap { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.map-card .bmap image { filter: grayscale(1) contrast(1.05); }
+.bm-area { font: 700 30px "Rubik", sans-serif; fill: rgba(11,11,12,.28); letter-spacing: .06em; }
+.bm-route { fill: none; stroke: #0b0b0c; stroke-width: 6; stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; animation: bmDraw 2.4s cubic-bezier(.4,0,.2,1) .4s forwards; }
+.bm-city circle { fill: #0b0b0c; stroke: #fff; stroke-width: 3; }
+.bm-city text { font: 600 28px "IBM Plex Sans Hebrew", "IBM Plex Sans", sans-serif; fill: #0b0b0c; paint-order: stroke; stroke: rgba(255,255,255,.9); stroke-width: 6px; }
+.bm-zone ellipse { fill: rgba(11,11,12,.18); stroke: #0b0b0c; stroke-width: 3; stroke-dasharray: 8 6; }
+.bm-dot { fill: #d9f99d; stroke: #0b0b0c; stroke-width: 3; }
+.bm-ping { fill: none; stroke: #0b0b0c; stroke-width: 3; transform-box: fill-box; transform-origin: center; animation: bmPing 2.2s ease-out infinite; }
+.bm-tag rect { fill: #0b0b0c; }
+.bm-tag text { font: 600 24px "Rubik", sans-serif; fill: #fff; }
+.bm-tag { opacity: 0; animation: bmIn .6s ease 2.6s forwards; }
+@keyframes bmDraw { to { stroke-dashoffset: 0; } }
+@keyframes bmPing { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(4); opacity: 0; } }
+@keyframes bmIn { to { opacity: 1; } }
+.map-card::after { z-index: 0; }
+.map-card p { z-index: 1; }
+@media (prefers-reduced-motion: reduce) { .bm-route { animation: none; stroke-dashoffset: 0; } .bm-ping { animation: none; } .bm-tag { animation: none; opacity: 1; } }
 /* marquee with a fixed title */
 .mq { border-block: 1px solid var(--bw-line); background: #fff; }
 .mq-in { display: flex; align-items: center; gap: 0; }
@@ -986,7 +1006,7 @@ main { background: #fff !important; }
 .black-card .sub { color: #cfcfd2; margin-top: 8px; }
 .chips4 { display: flex; flex-wrap: wrap; gap: 10px; }
 .chips4 span { background: #fff; color: var(--bw-ink); border-radius: 999px; padding: 9px 16px; font-size: var(--step-small); font-weight: 500; }
-.chips4 span:nth-child(odd) { transform: rotate(-3deg); } .chips4 span:nth-child(3n) { transform: rotate(4deg); }
+
 .side-card { border-radius: var(--r-lg); overflow: hidden; background: var(--bw-bg); display: grid; align-content: end; padding: 26px; position: relative; min-height: 300px; }
 .side-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); }
 .side-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.7), transparent 55%); }
@@ -1083,7 +1103,7 @@ footer.site .foot-bottom { border-top-color: var(--bw-line); }
   .proc { height: auto; display: grid; gap: 20px; }
   .proc svg.path { display: none; } a.note { position: relative; inset: auto; justify-self: center; transform: none; margin-top: 8px; }
   .pin-card { position: relative; inset: auto; width: auto; max-width: 520px; }
-  .pc1, .pc3 { transform: rotate(-2deg); justify-self: start; } .pc2, .pc4 { transform: rotate(2deg); justify-self: end; }
+  .pc1, .pc2, .pc3, .pc4 { transform: none !important; justify-self: stretch; max-width: none; }
   .hrow { grid-auto-columns: minmax(280px, 70%); }
 }
 @media (max-width: 600px) {
@@ -1200,7 +1220,14 @@ footer.site .foot-bottom { border-top-color: var(--bw-line); }
   <div class="feat">
     <div class="black-card"><svg class="waves" viewBox="0 0 900 360" preserveAspectRatio="none" aria-hidden="true"><path d="M-20 40.0 C 225 0.0, 405 80.0, 630 24.0 S 920 64.0, 920 40.0" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 53.6 C 225 11.4, 405 95.8, 630 36.8 S 920 79.0, 920 53.6" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 67.3 C 225 22.9, 405 111.7, 630 49.5 S 920 93.9, 920 67.3" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 80.9 C 225 34.3, 405 127.5, 630 62.3 S 920 108.9, 920 80.9" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 94.5 C 225 45.7, 405 143.3, 630 75.0 S 920 123.8, 920 94.5" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 108.2 C 225 57.2, 405 159.2, 630 87.8 S 920 138.8, 920 108.2" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 121.8 C 225 68.6, 405 175.0, 630 100.5 S 920 153.7, 920 121.8" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 135.5 C 225 80.1, 405 190.9, 630 113.3 S 920 168.7, 920 135.5" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 149.1 C 225 91.5, 405 206.7, 630 126.1 S 920 183.7, 920 149.1" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 162.7 C 225 102.9, 405 222.5, 630 138.8 S 920 198.6, 920 162.7" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 176.4 C 225 114.4, 405 238.4, 630 151.6 S 920 213.6, 920 176.4" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 190.0 C 225 125.8, 405 254.2, 630 164.3 S 920 228.5, 920 190.0" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 203.6 C 225 137.2, 405 270.0, 630 177.1 S 920 243.5, 920 203.6" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 217.3 C 225 148.7, 405 285.9, 630 189.8 S 920 258.4, 920 217.3" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 230.9 C 225 160.1, 405 301.7, 630 202.6 S 920 273.4, 920 230.9" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 244.5 C 225 171.5, 405 317.5, 630 215.3 S 920 288.3, 920 244.5" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 258.2 C 225 183.0, 405 333.4, 630 228.1 S 920 303.3, 920 258.2" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 271.8 C 225 194.4, 405 349.2, 630 240.9 S 920 318.3, 920 271.8" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 285.5 C 225 205.9, 405 365.1, 630 253.6 S 920 333.2, 920 285.5" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 299.1 C 225 217.3, 405 380.9, 630 266.4 S 920 348.2, 920 299.1" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 312.7 C 225 228.7, 405 396.7, 630 279.1 S 920 363.1, 920 312.7" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/><path d="M-20 326.4 C 225 240.2, 405 412.6, 630 291.9 S 920 378.1, 920 326.4" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none"/></svg><div><b>26</b><p class="sub">years at the Prime Minister’s Office, as head of a research branch and investigator</p></div>
       <div class="chips4"><span>OSINT</span><span>Competitive intelligence</span><span>Conflict of interest</span><span>Background checks</span><span>Locating heirs</span><span>Verification</span></div></div>
-    <div class="side-card"><img src="assets/map.jpg" alt="" width="1400" height="1120" loading="lazy" style="object-position:52% 34%"><p>8 years leading the search for the missing soldiers of Sultan Yacoub</p></div>
+    <div class="side-card map-card"><svg class="bmap" viewBox="350 60 760 780" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Map of the area: Metula, Beirut, Damascus and the Sultan Yacoub battle area">
+  <image href="assets/map.jpg" x="0" y="0" width="1402" height="1122" preserveAspectRatio="none"/>
+  <text class="bm-area" x="620" y="170">LEBANON</text><text class="bm-area" x="1010" y="640">SYRIA</text><text class="bm-area" x="400" y="770">ISRAEL</text>
+  <path class="bm-route" d="M492 700 L560 660 L612 590 L650 515 L684 440 L695 380" pathLength="100"/>
+  <g class="bm-city"><circle cx="377" cy="95" r="7"/><text x="377" y="129" text-anchor="start">Beirut</text></g><g class="bm-city"><circle cx="1065" cy="492" r="7"/><text x="1065" y="470" text-anchor="middle">Damascus</text></g><g class="bm-city"><circle cx="486" cy="780" r="7"/><text x="486" y="820" text-anchor="middle">Metula</text></g>
+  <g class="bm-zone"><ellipse cx="693" cy="372" rx="46" ry="20" transform="rotate(-43 693 372)"/><circle class="bm-ping" cx="700" cy="362" r="10"/><circle class="bm-dot" cx="700" cy="362" r="9"/></g>
+  <g class="bm-tag"><rect x="720" y="300" width="360" height="50" rx="25"/><text x="900" y="334" text-anchor="middle">Battle of Sultan Yacoub</text></g>
+</svg><p>8 years leading the search for the missing soldiers of Sultan Yacoub</p></div>
   </div>
 </div></section><section class="v4 sec wrap" aria-labelledby="pr-h"><div class="inner">
   <span class="pill-label">How it works</span><h2 id="pr-h" class="big">From raw information to an answer you can act on</h2>
