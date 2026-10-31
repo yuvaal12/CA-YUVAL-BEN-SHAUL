@@ -787,6 +787,14 @@ html.a11y-invert main img, html.a11y-invert main video, html.a11y-invert .masthe
 .head-row { grid-template-columns: minmax(0, 1fr) !important; align-items: start !important; gap: 12px !important; }
 .head-row .muted, .v4 .head-row .muted { justify-self: start !important; max-width: 62ch; margin-top: 0; }
 
+/* the keynote link stands out in the nav */
+.nav a.hl { background: #d9f99d; color: #0b0b0c !important; font-weight: 600; box-shadow: inset 0 0 0 1.5px #0b0b0c; gap: 7px; }
+.nav a.hl::before { display: none; }
+.nav a.hl .ic { width: 18px; height: 18px; --duo-o: .25; }
+.nav a.hl:hover { background: #c8f07d; }
+.nav a.hl[aria-current="page"] { background: #0b0b0c !important; color: #d9f99d !important; }
+@media (max-width: 1100px) { .nav a.hl { justify-content: flex-start; } }
+
 /* lecturer feature card in the hero */
 .lec-card { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 18px; align-items: stretch; margin-top: 18px; max-width: 600px; padding: 12px; border-radius: 24px; background: #0b0b0c; color: #fff; text-decoration: none; box-shadow: 0 26px 50px -26px rgba(0,0,0,.65); transition: transform .25s var(--ease-out), box-shadow .25s; animation: heroIn .9s cubic-bezier(.2,.8,.2,1) .45s both; position: relative; }
 .lec-card:hover { transform: translateY(-3px); box-shadow: 0 32px 60px -26px rgba(0,0,0,.75); }
@@ -932,7 +940,7 @@ main { background: #fff !important; }
 
 /* marquee */
 .marquee { border-block: 1px solid var(--bw-line); overflow: hidden; padding-block: 22px; background: #fff; }
-.marquee .track { display: flex; gap: 48px; width: max-content; animation: slide 38s linear infinite; }
+.marquee .track { display: flex; gap: 48px; width: max-content; animation: slide 60s linear infinite; }
 .marquee span { display: inline-flex; align-items: center; gap: 48px; font-family: "Rubik", var(--f-text); font-weight: 500; font-size: 1.15rem; color: #3c3d42; white-space: nowrap; }
 .marquee span::after { content: "✦"; font-size: .9rem; color: var(--bw-ink); }
 @keyframes slide { to { transform: translateX(50%); } }
@@ -1075,7 +1083,7 @@ footer.site .foot-bottom { border-top-color: var(--bw-line); }
 <header class="masthead wrap" id="mast">
   <div class="inner mast-row">
     <a class="home" href="index.html" aria-label="Modi-In, לדף הבית"><img class="logo-img" src="assets/logo.png" alt="Modi-In" width="589" height="235"></a>
-    <nav class="nav" id="nav" aria-label="ניווט ראשי"><a href="index.html" aria-current="page">דף הבית</a><a href="about.html">מי אני</a><a href="services.html">שירותים</a><a href="lecture.html" class="hl">הרצאה</a><a href="articles.html">מאמרים</a><a href="contact.html">צור קשר</a></nav>
+    <nav class="nav" id="nav" aria-label="ניווט ראשי"><a href="index.html" aria-current="page">דף הבית</a><a href="about.html">מי אני</a><a href="services.html">שירותים</a><a href="lecture.html" class="hl"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-microphone-stage"/></svg>הרצאה</a><a href="articles.html">מאמרים</a><a href="contact.html">צור קשר</a></nav>
     <div class="mast-actions">
       <a class="lang-sw" href="en.html" lang="en" hreflang="en" aria-label="English site">EN</a>
       <a class="btn btn-wa js-wa btn-sm" href="contact.html" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-whatsapp-logo"/></svg><span class="btn-label">וואטסאפ</span></a>
@@ -1107,7 +1115,7 @@ footer.site .foot-bottom { border-top-color: var(--bw-line); }
   <img src="assets/portrait.png" alt="מודי בן שאול, מייסד Modi-In" width="617" height="1101"></div>
   <figcaption class="pcap"><div class="who"><b>מודי בן שאול</b><span>מייסד Modi-In · מחקר ומודיעין עסקי</span></div><div class="pstats"><div><b dir="ltr">30+</b><span>שנות ניסיון במודיעין</span></div><div><b dir="ltr">26</b><span>שנים במשרד ראש הממשלה</span></div><div><b dir="ltr">2021</b><span>הקמת Modi-In</span></div></div></figcaption>
 </figure>
-</div></section><div class="mq wrap"><div class="mq-in"><span class="mq-t">מי הלקוחות שלי</span><div class="marquee" aria-label="מי הלקוחות שלי"><div class="track"><span>חברות מודיעין פיננסי</span><span>עורכי דין</span><span>משקיעים</span><span>חוקרים פרטיים</span><span>חברות מודיעין עסקי</span><span>חוקרי מודיעין עצמאיים</span><span>ארגונים וחברות</span><span>חברות מודיעין פיננסי</span><span>עורכי דין</span><span>משקיעים</span><span>חוקרים פרטיים</span><span>חברות מודיעין עסקי</span><span>חוקרי מודיעין עצמאיים</span><span>ארגונים וחברות</span><span>חברות מודיעין פיננסי</span><span>עורכי דין</span><span>משקיעים</span><span>חוקרים פרטיים</span><span>חברות מודיעין עסקי</span><span>חוקרי מודיעין עצמאיים</span><span>ארגונים וחברות</span><span>חברות מודיעין פיננסי</span><span>עורכי דין</span><span>משקיעים</span><span>חוקרים פרטיים</span><span>חברות מודיעין עסקי</span><span>חוקרי מודיעין עצמאיים</span><span>ארגונים וחברות</span></div></div></div></div><section class="v4 sec grey wrap" aria-labelledby="ab-h"><div class="inner">
+</div></section><div class="mq wrap"><div class="mq-in"><span class="mq-t">מי הלקוחות שלי</span><div class="marquee" aria-label="מי הלקוחות שלי"><div class="track"><span>חברות מודיעין פיננסי</span><span>עורכי דין</span><span>משקיעים</span><span>חוקרים פרטיים</span><span>בנקים וגופים פיננסיים</span><span>חברות ביטוח</span><span>רואי חשבון</span><span>קרנות הון סיכון</span><span>חברות ייעוץ</span><span>חברות נדל״ן</span><span>משרדי גיוס והשמה</span><span>עיתונאים חוקרים</span><span>מוסדות אקדמיים</span><span>ארגונים ועמותות</span><span>חברות מודיעין פיננסי</span><span>עורכי דין</span><span>משקיעים</span><span>חוקרים פרטיים</span><span>בנקים וגופים פיננסיים</span><span>חברות ביטוח</span><span>רואי חשבון</span><span>קרנות הון סיכון</span><span>חברות ייעוץ</span><span>חברות נדל״ן</span><span>משרדי גיוס והשמה</span><span>עיתונאים חוקרים</span><span>מוסדות אקדמיים</span><span>ארגונים ועמותות</span></div></div></div></div><section class="v4 sec grey wrap" aria-labelledby="ab-h"><div class="inner">
   <div class="about-grid">
     <div><span class="pill-label">מי אני</span><h2 id="ab-h" class="big">נעים מאוד, מודי בן שאול</h2>
       <p class="muted" style="margin-top:18px">יותר מ-30 שנה בניתוח ועיבוד מודיעין, מהן 26 שנים במשרד ראש הממשלה כראש ענף מחקר וכחוקר. ב-2021 הקמתי את Modi-In, כדי להביא את שיטות העבודה של עולם המודיעין לעסקים.</p>

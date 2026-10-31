@@ -787,6 +787,14 @@ html.a11y-invert main img, html.a11y-invert main video, html.a11y-invert .masthe
 .head-row { grid-template-columns: minmax(0, 1fr) !important; align-items: start !important; gap: 12px !important; }
 .head-row .muted, .v4 .head-row .muted { justify-self: start !important; max-width: 62ch; margin-top: 0; }
 
+/* the keynote link stands out in the nav */
+.nav a.hl { background: #d9f99d; color: #0b0b0c !important; font-weight: 600; box-shadow: inset 0 0 0 1.5px #0b0b0c; gap: 7px; }
+.nav a.hl::before { display: none; }
+.nav a.hl .ic { width: 18px; height: 18px; --duo-o: .25; }
+.nav a.hl:hover { background: #c8f07d; }
+.nav a.hl[aria-current="page"] { background: #0b0b0c !important; color: #d9f99d !important; }
+@media (max-width: 1100px) { .nav a.hl { justify-content: flex-start; } }
+
 /* lecturer feature card in the hero */
 .lec-card { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 18px; align-items: stretch; margin-top: 18px; max-width: 600px; padding: 12px; border-radius: 24px; background: #0b0b0c; color: #fff; text-decoration: none; box-shadow: 0 26px 50px -26px rgba(0,0,0,.65); transition: transform .25s var(--ease-out), box-shadow .25s; animation: heroIn .9s cubic-bezier(.2,.8,.2,1) .45s both; position: relative; }
 .lec-card:hover { transform: translateY(-3px); box-shadow: 0 32px 60px -26px rgba(0,0,0,.75); }
@@ -932,7 +940,7 @@ main { background: #fff !important; }
 
 /* marquee */
 .marquee { border-block: 1px solid var(--bw-line); overflow: hidden; padding-block: 22px; background: #fff; }
-.marquee .track { display: flex; gap: 48px; width: max-content; animation: slide 38s linear infinite; }
+.marquee .track { display: flex; gap: 48px; width: max-content; animation: slide 60s linear infinite; }
 .marquee span { display: inline-flex; align-items: center; gap: 48px; font-family: "Rubik", var(--f-text); font-weight: 500; font-size: 1.15rem; color: #3c3d42; white-space: nowrap; }
 .marquee span::after { content: "✦"; font-size: .9rem; color: var(--bw-ink); }
 @keyframes slide { to { transform: translateX(50%); } }
@@ -1306,7 +1314,7 @@ footer.site .foot-bottom { border-top-color: var(--bw-line); }
 <header class="masthead wrap" id="mast">
   <div class="inner mast-row">
     <a class="home" href="en.html" aria-label="Modi-In home"><img class="logo-img" src="assets/logo.png" alt="Modi-In" width="589" height="235"></a>
-    <nav class="nav" id="nav" aria-label="Main"><a href="en.html">Home</a><a href="en-about.html">About</a><a href="en-services.html">Services</a><a href="en-lecture.html" class="hl">Keynote</a><a href="en-articles.html" aria-current="page">Articles</a><a href="en-contact.html">Contact</a></nav>
+    <nav class="nav" id="nav" aria-label="Main"><a href="en.html">Home</a><a href="en-about.html">About</a><a href="en-services.html">Services</a><a href="en-lecture.html" class="hl"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-microphone-stage"/></svg>Keynote</a><a href="en-articles.html" aria-current="page">Articles</a><a href="en-contact.html">Contact</a></nav>
     <div class="mast-actions">
       <a class="lang-sw" href="facts-vs-assessments.html" lang="he" hreflang="he" aria-label="לאתר בעברית">עב</a>
       <a class="btn btn-wa js-wa btn-sm" href="en-contact.html" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-whatsapp-logo"/></svg><span class="btn-label">WhatsApp</span></a>
