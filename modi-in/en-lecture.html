@@ -1499,6 +1499,25 @@ html[dir=ltr] .timeline li + li::before { left: 22px; }
 #book .form-note { color: #5c5d63; }
 @media (max-width: 900px) { #book .coupon { grid-template-columns: minmax(0, 1fr); } #book .coupon-left { border-bottom: 0 !important; } }
 
+/* lecturer strip in the hero */
+.lec-strip { display: flex; align-items: center; gap: 14px; margin-top: 26px; max-width: 560px; padding: 12px 12px 12px 16px; padding-inline-start: 12px; border-radius: 20px; background: #0b0b0c; color: #fff; text-decoration: none; transition: transform .25s var(--ease-out), box-shadow .25s; box-shadow: 0 18px 36px -22px rgba(0,0,0,.6); animation: heroIn .9s cubic-bezier(.2,.8,.2,1) .5s both; }
+.lec-strip:hover { transform: translateY(-2px); box-shadow: 0 24px 44px -22px rgba(0,0,0,.7); }
+.ls-ic { width: 46px; height: 46px; border-radius: 50%; background: #fff; color: #0b0b0c; display: grid; place-items: center; flex: none; --duo-o: .2; }
+.ls-ic .ic { width: 24px; height: 24px; }
+.ls-tx { display: grid; gap: 2px; min-width: 0; flex: 1; }
+.ls-tx em { font-style: normal; font-size: .75rem; color: #a7a7ad; letter-spacing: .02em; }
+.ls-tx b { font-family: "Rubik", var(--f-text); font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
+.ls-tx small { font-size: .82rem; color: #cfcfd2; line-height: 1.4; }
+.ls-go { width: 38px; height: 38px; border-radius: 50%; border: 1px solid #3a3a3f; display: grid; place-items: center; flex: none; }
+.ls-go .ic { width: 16px; height: 16px; transform: rotate(45deg); }
+[dir=ltr] .ls-go .ic { transform: rotate(135deg); }
+/* marquee with a fixed title */
+.mq { border-block: 1px solid var(--bw-line); background: #fff; }
+.mq-in { display: flex; align-items: center; gap: 0; }
+.mq-t { flex: none; font-family: "Rubik", var(--f-text); font-weight: 600; font-size: 1rem; color: #fff; background: #0b0b0c; border-radius: 999px; padding: 10px 18px; margin-inline-end: 22px; position: relative; z-index: 1; white-space: nowrap; }
+.mq .marquee { border: 0; flex: 1; min-width: 0; -webkit-mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+@media (max-width: 600px) { .mq-t { font-size: .85rem; padding: 8px 12px; margin-inline-end: 10px; } .lec-strip { margin-top: 20px; } .ls-tx small { font-size: .78rem; } }
+
 /* hero portrait: radar card + clean caption */
 .pwrap { margin: 0; display: grid; gap: 18px; }
 .dcard { position: relative; border-radius: var(--r-lg); background: radial-gradient(120% 90% at 50% 18%, #fbfbfa 0%, #ececea 55%, #dcdcd9 100%); height: clamp(440px, 42vw, 580px); overflow: hidden; isolation: isolate; }
@@ -1797,7 +1816,8 @@ footer.site .foot-bottom { border-top-color: var(--bw-line); }
 .kp4 > div { background: #fff; border-radius: 20px; padding: 26px 24px; display: grid; gap: 6px; border: 1px solid #e7e7e4; }
 .kp4 b { font-family: "Rubik", var(--f-text); font-size: clamp(2.2rem, 1.6rem + 1.8vw, 3.2rem); line-height: 1; font-weight: 600; color: #0b0b0c; }
 .kp4 span { color: #5c5d63; font-size: var(--step-small); line-height: 1.5; }
-.lec-feat { margin-top: 0; }
+.lec-feat { margin-top: clamp(24px, 3vw, 36px); }
+.lec-head .huge { font-family: "Rubik", var(--f-text); font-size: clamp(2.6rem, 1.4rem + 4.4vw, 5rem); line-height: 1.05; font-weight: 700; color: #0b0b0c; margin-top: 16px; letter-spacing: -.015em; }
 .lec-feat .black-card h2 { margin-top: 16px; }
 .chips5 { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
 .chips5 span { display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 999px; border: 1px solid #d6d6d3; background: #fff; font-weight: 500; color: #0b0b0c; }
@@ -1826,6 +1846,20 @@ footer.site .foot-bottom { border-top-color: var(--bw-line); }
 .never2 p { color: #d4d4d8; line-height: 1.55; }
 .never2 b { color: #fff; }
 
+/* halacha callout */
+.hl-card { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(20px, 4vw, 48px); align-items: center; text-decoration: none; color: inherit; background: #f4f4f2; border-radius: 28px; padding: clamp(16px, 2vw, 22px); }
+.hl-card img { width: 100%; height: 100%; min-height: 240px; object-fit: cover; border-radius: 20px; }
+.hl-card > div { padding: clamp(8px, 2vw, 20px); }
+.hl-card:hover .pbtn .arr { transform: rotate(-45deg); }
+@media (max-width: 860px) { .hl-card { grid-template-columns: minmax(0, 1fr); } .hl-card img { min-height: 200px; aspect-ratio: 16 / 9; } }
+/* specialties */
+.spec { list-style: none; margin-top: clamp(28px, 4vw, 44px); border-top: 1px solid #e2e2df; }
+.spec li { display: grid; grid-template-columns: 70px 56px minmax(0, 1fr); gap: 18px; align-items: center; padding-block: clamp(18px, 2.4vw, 28px); border-bottom: 1px solid #e2e2df; transition: background-color .25s; }
+.spec li:hover { background: #fafaf8; }
+.spec .n { font-family: "Rubik", var(--f-text); font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.4rem); font-weight: 600; color: #c4c4c1; line-height: 1; }
+.spec h3 { font-family: "Rubik", var(--f-text); font-size: clamp(1.2rem, 1rem + .8vw, 1.6rem); font-weight: 600; color: #0b0b0c; line-height: 1.3; }
+.spec p { color: #5c5d63; font-size: var(--step-body); line-height: 1.6; margin-top: 4px; }
+@media (max-width: 640px) { .spec li { grid-template-columns: 44px minmax(0, 1fr); } .spec .ico { display: none; } }
 /* cases */
 .ftabs { display: flex; flex-wrap: wrap; gap: 8px; padding: 6px; background: #fff; border-radius: 999px; width: fit-content; max-width: 100%; border: 1px solid #e2e2df; }
 .ftabs button { display: inline-flex; align-items: center; gap: 8px; border: 0; background: transparent; padding: 10px 18px; border-radius: 999px; font: 500 .97rem var(--f-text); color: #3c3d43; cursor: pointer; transition: background-color .2s, color .2s; }
@@ -2189,7 +2223,7 @@ footer.site .foot-bottom { border-top-color: var(--bw-line); }
   <div class="faq2-side"><span class="pill-label">FAQ</span><h2 class="big" id="lfaq-h">Questions about the keynote</h2><p class="muted">Didn’t find your answer? Send me a question on WhatsApp and I’ll get back to you.</p><div class="acts"><a class="btn btn-wa js-wa " href="en-contact.html" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-whatsapp-logo"/></svg><span class="btn-label">Ask on WhatsApp</span></a></div><a class="link-arrow" href="en-faq.html">All FAQs <svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-arrow-left"/></svg></a></div>
   <div class="faq"><details><summary>What is the keynote about?</summary><div class="a"><p>About the search for the soldiers missing since the Battle of Sultan Yacoub, which Modi Ben Shaul led for eight years, and what it teaches managers and teams about making decisions under uncertainty.</p></div></details><details><summary>Who is it for?</summary><div class="a"><p>Management forums, company conferences, seminars and team-building days, organizations going through change, and client events.</p></div></details><details><summary>What does the audience take home?</summary><div class="a"><p>Nine lessons: from intelligence to management, solving problems under uncertainty, creative thinking, responsibility, collaboration, handling opposition, advanced research methods, staying true to the truth, and telling facts from assessments.</p></div></details><details><summary>How do I book the keynote?</summary><div class="a"><p>Fill in the form on the keynote page, send a WhatsApp message or call +972-50-916-4860. Modi will get back to you to set the date, the length of the talk and how to tailor it to your audience.</p></div></details></div>
 </div></div></section><section class="v4 sec wrap grey" aria-labelledby="gl-h"><div class="inner"><div class="head-row"><div><span class="pill-label">Glossary</span><h2 class="big" id="gl-h">Tools from the intelligence world</h2></div><p class="muted">Concepts that come up in the keynote</p></div>
-  <div class="slider"><div class="slider-track" aria-label="Tools from the intelligence world"><article class="slide"><span class="tile sm" aria-hidden="true"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-user-switch"/></svg></span><h3>Devil’s advocate</h3><p class="en" title="Ipcha Mistabra">Ipcha Mistabra</p><p class="txt">“The opposite is likely.” Deliberately testing the scenario opposite to the accepted assessment, so you don’t lock onto a single explanation.</p><a href="en-facts-vs-assessments.html#devil">Devil’s advocate <svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-arrow-left"/></svg></a></article><article class="slide"><span class="tile sm" aria-hidden="true"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-tree-structure"/></svg></span><h3>Competing hypotheses</h3><p class="en" title="ACH · Method">ACH · Method</p><p class="txt">A method developed by Richards Heuer of the CIA: raise several possible explanations for the same evidence, and look for the one that the least evidence contradicts.</p><a href="en-facts-vs-assessments.html#ach">Competing hypotheses <svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-arrow-left"/></svg></a></article><article class="slide"><span class="tile sm" aria-hidden="true"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-list-checks"/></svg></span><h3>Rumsfeld matrix</h3><p class="en" title="Known unknowns">Known unknowns</p><p class="txt">Four kinds of knowledge: what we know we know, what we know we don’t know, what we don’t know we don’t know, and what we know without realizing it.</p><a href="en-facts-vs-assessments.html#rumsfeld">The Rumsfeld matrix <svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-arrow-left"/></svg></a></article><article class="slide"><span class="tile sm" aria-hidden="true"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-puzzle-piece"/></svg></span><h3>Facts vs. assessments</h3><p class="en" title="Analytic thinking">Analytic thinking</p><p class="txt">A ground rule of intelligence analysis: separate what is known from what is estimated, and go back to the original raw data when an old assessment starts behaving like a fact.</p><a href="en-facts-vs-assessments.html">Five tools from intelligence <svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-arrow-left"/></svg></a></article><article class="slide"><span class="tile sm" aria-hidden="true"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-binoculars"/></svg></span><h3>Open-source intelligence</h3><p class="en" title="OSINT · Core concept">OSINT · Core concept</p><p class="txt">Collecting and analyzing information that has been published openly and legally: media, social networks, websites and official publications. The value is never in a single piece of information, but in cross-checking many of them.</p><a href="en-osint.html">What is OSINT <svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-arrow-left"/></svg></a></article><article class="slide"><span class="tile sm" aria-hidden="true"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-question"/></svg></span><h3>Research question</h3><p class="en" title="Starting point">Starting point</p><p class="txt">Where every project begins. A focused question saves time and money, and points the collection at what really matters to your decision.</p><a href="en-how-we-work.html">How I work <svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-arrow-left"/></svg></a></article></div></div></div></section>
+  <div class="slider"><div class="slider-track" aria-label="Tools from the intelligence world"><article class="slide"><span class="tile sm" aria-hidden="true"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-user-switch"/></svg></span><h3>Devil’s advocate</h3><p class="en" title="Ipcha Mistabra">Ipcha Mistabra</p><p class="txt">“The opposite is likely.” Deliberately testing the scenario opposite to the accepted assessment, so you don’t lock onto a single explanation.</p><a href="en-facts-vs-assessments.html#devil">Devil’s advocate <svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-arrow-left"/></svg></a></article><article class="slide"><span class="tile sm" aria-hidden="true"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-tree-structure"/></svg></span><h3>Competing hypotheses</h3><p class="en" title="ACH · Method">ACH · Method</p><p class="txt">A method developed by Richards Heuer of the CIA: raise several possible explanations for the same evidence, and look for the one that the least evidence contradicts.</p><a href="en-facts-vs-assessments.html#ach">Competing hypotheses <svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-arrow-left"/></svg></a></article><article class="slide"><span class="tile sm" aria-hidden="true"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-list-checks"/></svg></span><h3>Rumsfeld matrix</h3><p class="en" title="Known unknowns">Known unknowns</p><p class="txt">Four kinds of knowledge: what we know we know, what we know we don’t know, what we don’t know we don’t know, and what we know without realizing it.</p><a href="en-facts-vs-assessments.html#rumsfeld">The Rumsfeld matrix <svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-arrow-left"/></svg></a></article><article class="slide"><span class="tile sm" aria-hidden="true"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-puzzle-piece"/></svg></span><h3>Facts vs. assessments</h3><p class="en" title="Analytic thinking">Analytic thinking</p><p class="txt">A ground rule of intelligence analysis: separate what is known from what is estimated, and go back to the original raw data when an old assessment starts behaving like a fact.</p><a href="en-facts-vs-assessments.html">Nine tools from intelligence <svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-arrow-left"/></svg></a></article><article class="slide"><span class="tile sm" aria-hidden="true"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-binoculars"/></svg></span><h3>Open-source intelligence</h3><p class="en" title="OSINT · Core concept">OSINT · Core concept</p><p class="txt">Collecting and analyzing information that has been published openly and legally: media, social networks, websites and official publications. The value is never in a single piece of information, but in cross-checking many of them.</p><a href="en-osint.html">What is OSINT <svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-arrow-left"/></svg></a></article><article class="slide"><span class="tile sm" aria-hidden="true"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-question"/></svg></span><h3>Research question</h3><p class="en" title="Starting point">Starting point</p><p class="txt">Where every project begins. A focused question saves time and money, and points the collection at what really matters to your decision.</p><a href="en-how-we-work.html">How I work <svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-arrow-left"/></svg></a></article></div></div></div></section>
   <section class="section wrap" id="book">
     <div class="inner coupon reveal">
       <div class="coupon-left">
@@ -2231,7 +2265,7 @@ footer.site .foot-bottom { border-top-color: var(--bw-line); }
         <p>Turning information into intelligence. Open-source research (OSINT) and business intelligence for decision makers, within the law and professional ethics.</p>
       </div>
       <nav aria-label="Site"><h2>Site</h2><ul><li><a href="en.html">Home</a></li><li><a href="en-about.html">About</a></li><li><a href="en-services.html">Services</a></li><li><a href="en-lecture.html">Keynote</a></li><li><a href="en-articles.html">Articles</a></li><li><a href="en-contact.html">Contact</a></li><li><a href="en-cases.html">Case examples</a></li><li><a href="en-how-we-work.html">How I work</a></li><li><a href="en-faq.html">FAQ</a></li></ul></nav>
-      <nav aria-label="Articles"><h2>Articles</h2><ul><li><a href="en-osint.html">What is OSINT</a></li><li><a href="en-competitive-intelligence.html">Competitive intelligence</a></li><li><a href="en-conflict-of-interest.html">Conflict-of-interest checks</a></li><li><a href="en-due-diligence.html">Pre-investment background checks</a></li><li><a href="en-locating-heirs.html">Locating heirs and people</a></li><li><a href="en-facts-vs-assessments.html">Facts vs. assessments</a></li><li><a href="en-verify-information.html">Verification and fake news</a></li></ul></nav>
+      <nav aria-label="Articles"><h2>Articles</h2><ul><li><a href="en-osint.html">What is OSINT</a></li><li><a href="en-competitive-intelligence.html">Competitive intelligence</a></li><li><a href="en-conflict-of-interest.html">Conflict-of-interest checks</a></li><li><a href="en-due-diligence.html">Pre-investment background checks</a></li><li><a href="en-locating-heirs.html">Locating heirs and people</a></li><li><a href="en-facts-vs-assessments.html">Facts vs. assessments</a></li><li><a href="en-verify-information.html">Verification and fake news</a></li><li><a href="en-halacha-osint.html">OSINT and Jewish law</a></li></ul></nav>
       <div class="foot-contact"><h2>Contact</h2><ul>
         <li><a href="tel:+972509164860"><span class="ci"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-phone"/></svg></span><span class="v">+972-50-916-4860</span></a></li>
         <li><a href="mailto:modi-in@modi-in.net"><span class="ci"><svg class="ic" aria-hidden="true" focusable="false"><use href="#ph-envelope-simple"/></svg></span><span class="v">modi-in@modi-in.net</span></a></li>
@@ -2379,7 +2413,7 @@ footer.site .foot-bottom { border-top-color: var(--bw-line); }
     s.add(new T.Mesh(geo, new T.MeshStandardMaterial({ map: tex, roughness: 0.95, metalness: 0 })));
     var base = new T.Mesh(new T.BoxGeometry(W, 0.35, D), new T.MeshBasicMaterial({ color: 0xd3d0c7 })); base.position.y = -0.18; s.add(base);
 
-    var pts = [[492, 700], [560, 660], [612, 590], [650, 515], [686, 440], [708, 384]].map(function (q) { return P(q[0], q[1], 0.05); });
+    var pts = [[492, 700], [560, 660], [612, 590], [650, 515], [684, 440], [695, 380]].map(function (q) { return P(q[0], q[1], 0.05); });
     var smp = new T.CatmullRomCurve3(pts).getPoints(120).map(function (v) { v.y = hAt((v.x / W + 0.5) * PW, (v.z / D + 0.5) * PH) + 0.06; return v; });
     var tg = new T.TubeGeometry(new T.CatmullRomCurve3(smp), 200, 0.035, 8, false);
     routeCount = tg.index.count; tg.setDrawRange(0, 0);
@@ -2389,7 +2423,7 @@ footer.site .foot-bottom { border-top-color: var(--bw-line); }
     head.position.copy(end); head.quaternion.setFromUnitVectors(new T.Vector3(0, 1, 0), end.clone().sub(prev).normalize()); head.visible = false; s.add(head);
     route.userData.head = head;
 
-    var sy = P(711, 372, 0), pin = new T.Group();
+    var sy = P(700, 362, 0), pin = new T.Group();
     var stem = new T.Mesh(new T.CylinderGeometry(0.012, 0.012, 1.3, 8), new T.MeshBasicMaterial({ color: INK })); stem.position.y = 0.65; pin.add(stem);
     var ball = new T.Mesh(new T.SphereGeometry(0.08, 20, 20), new T.MeshStandardMaterial({ color: NAVY })); ball.position.y = 1.32; pin.add(ball);
     pin.position.copy(sy); s.add(pin);
@@ -2403,14 +2437,14 @@ footer.site .foot-bottom { border-top-color: var(--bw-line); }
     var trR = trL.clone(); trR.position.z = -0.12; tank.add(trR);
     var tur = new T.Mesh(new T.CylinderGeometry(0.085, 0.1, 0.07, 14), mt); tur.position.set(-0.02, 0.155, 0); tank.add(tur);
     var gun = new T.Mesh(new T.CylinderGeometry(0.012, 0.012, 0.32, 8), md); gun.rotation.z = Math.PI / 2; gun.position.set(0.16, 0.16, 0); tank.add(gun);
-    tank.scale.setScalar(1.25); tank.position.copy(P(728, 392, 0)); tank.rotation.y = 0.9; s.add(tank);
+    tank.scale.setScalar(1.25); tank.position.copy(P(712, 392, 0)); tank.rotation.y = 0.9; s.add(tank);
     /* battle zone: ellipse along the Masnaa-Rachaiya road, south-west of the village */
-    var zc = P(704, 380, 0.14), zone = new T.Mesh(new T.RingGeometry(0.86, 1, 72), new T.MeshBasicMaterial({ color: INK, transparent: true, opacity: 0.95, side: T.DoubleSide, depthTest: false }));
+    var zc = P(693, 372, 0.14), zone = new T.Mesh(new T.RingGeometry(0.86, 1, 72), new T.MeshBasicMaterial({ color: INK, transparent: true, opacity: 0.95, side: T.DoubleSide, depthTest: false }));
     zone.rotation.x = -Math.PI / 2; zone.rotation.z = 0.75; zone.scale.set(0.5, 0.2, 1); zone.position.copy(zc); s.add(zone);
     var zf = new T.Mesh(new T.CircleGeometry(1, 64), new T.MeshBasicMaterial({ color: NAVY, transparent: true, opacity: 0.28, side: T.DoubleSide, depthTest: false }));
     zf.rotation.copy(zone.rotation); zf.scale.copy(zone.scale); zf.position.copy(zc); s.add(zf); zf.renderOrder = 5; zone.renderOrder = 6;
 
-    [["Battle of Sultan Yacoub", 711, 372, 1.55, "main"], ["Mount Hermon", 714, 616, 0.35, ""], ["Metula", 486, 780, 0.25, ""],
+    [["Battle of Sultan Yacoub", 700, 362, 1.55, "main"], ["Mount Hermon", 714, 616, 0.35, ""], ["Metula", 486, 780, 0.25, ""],
      ["Beirut", 377, 95, 0.25, ""], ["Damascus", 1065, 492, 0.25, ""],
      ["Lebanon", 656, 137, 0.5, "area"], ["Syria", 1135, 874, 0.4, "area"], ["Israel", 273, 1042, 0.4, "area"]].forEach(function (l) {
       var el = document.createElement("span"); el.className = "map-label " + l[4]; el.textContent = l[0]; wrap.appendChild(el);
